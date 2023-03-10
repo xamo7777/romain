@@ -1,27 +1,28 @@
 package com.mycompany.tennis.core;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class TestDeConnexion {
 	public static void main(String... args) {
 		Connection conn = null;
 		try {
-			MysqlDataSource dataSource = new MysqlDataSource();
-			conn = dataSource.getConnection(); // dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode");
-			dataSource.setServerName("localhost");
-			dataSource.setDatabaseName("tennis");
-			dataSource.setUseSSL(false);
-			dataSource.setUser("root");
-			dataSource.setPassword("root");
+//			MysqlDataSource dataSource = new MysqlDataSource();
+//			conn = dataSource.getConnection(); 
+//		//	dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode");
+//			dataSource.setServerName("localhost");
+//			dataSource.setPort(3306);
+//			dataSource.setDatabaseName("tennis");
+//			dataSource.setUseSSL(false);
+//			dataSource.setUser("root");
+//			dataSource.setPassword("root");
 
-			// MySQL driver MySQL Connector
-//			conn = DriverManager.getConnection(
-//					"jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris",
-//					"root", "root");
+			//MySQL driver MySQL Connector
+			conn = DriverManager.getConnection(
+				"jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris",
+				"root", "root");
 
 			conn.setAutoCommit(false);
 
