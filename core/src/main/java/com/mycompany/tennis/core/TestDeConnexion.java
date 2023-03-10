@@ -19,7 +19,8 @@ public class TestDeConnexion {
 //			dataSource.setUser("root");
 //			dataSource.setPassword("root");
 
-			//MySQL driver MySQL Connector
+			//MySQL driver MySQL Connector 
+			
 			conn = DriverManager.getConnection(
 				"jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris",
 				"root", "root");
